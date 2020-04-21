@@ -2,8 +2,8 @@ $(document).ready(function () {
 
     var sH = $(window).height() - 20;
     console.log(sH);
-    $('.container').css('height', sH + 'px');
-    // $('<body>').css('height', sH + 'px');
+    $('.container').css('min-height', sH + 'px');
+    // $('<body>').css('min-height', sH + 'px');
 
 
     $('#searchBtn').on('click', function () {
