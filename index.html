@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="appelApi.js"></script>
+    <title>Film Poster Project</title>
 </head>
 
 <body>
@@ -26,14 +28,17 @@
             <div id="searchForm" >
                 <label for="inputSearch"><h4>Saisissez votre recherche</h4></label>
                 <br><br>
-                <input type="text" name="inputSearch" class="form-control">
+                <input type="text" id="inputSearch" name="inputSearch" class="form-control">
                 <br><br>
-                <button class="btn-lg btn-outline-info">Je trouve les affiches !</button>
+                <button class="btn-lg btn-outline-info" id="searchBtn">Je trouve les affiches !</button>
             </div>
         </div>
+        <div class="row mt-4 justify-content-center" id="resultSearch">
+
+        </div>
     </div>
+    <img src="" alt="">
 </body>
-<script src="/jquery-3.4.1.js"></script>
-<script src="/appelApi.js"></script>
+
 
 </html>
