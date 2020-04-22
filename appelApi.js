@@ -4,7 +4,7 @@ $(document).ready(function () {
     console.log(sH);
     $('.container').css('min-height', sH + 'px');
     // $('<body>').css('min-height', sH + 'px');
-
+    $('.footer').css('margin-top', sH/2)
 
     $('#searchBtn').on('click', function () {
 
@@ -44,7 +44,7 @@ $('<div></div>').attr({
 
             for (var i = 0; i < data['results'].length; i++) {
                 var currentDiv = $('<div></div>').attr({
-                    class: 'col-md-6 col-sm-12 mb-1 mt-1 resultDiv'
+                    class: 'col-md-6 col-sm-12 mb-2 mt-1 resultDiv'
                 }).appendTo($('#resultSearch'));
                 
                 // récupération des infos du film

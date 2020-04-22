@@ -13,12 +13,14 @@
 
 <body>
     <div class="container">
-        <div class="row mt-2">
+        <div class="row ">
             <div class="col-md-8 ">
                 <h1 id="h1Title">Film Poster Project</h1><br>
                 <small>an API's use by Thomas F.</small>
-
-                <img id="informationImg" src="images/information.png" alt="information" title="information">
+                
+            </div>
+            <div class="col-md-4">
+                
             </div>
             
             
@@ -27,21 +29,24 @@
             <div id="searchForm">
                 <label for="inputSearch">
                     <h4>Saisissez votre recherche</h4>
+                    <small>limité à 10 résultats max pour le moment</small>
                 </label>
                 <br><br>
                 <input type="text" id="inputSearch" name="inputSearch" class="form-control">
                 <br><br>
-                <button class="btn-lg btn-outline-info" id="searchBtn">Je trouve les affiches !</button>
+                <button class="btn-lg btn-outline-danger" id="searchBtn">Je trouve les affiches !</button>
             </div>
         </div>
         <div class="row mt-4 justify-content-center" id="resultSearch">
 
         </div>
         <footer>
-            <div class="row mt-5">
-                <div class="footer col-md-10 justify-content-center mb-4 mt-5">
+            <div class="row footer">
+                <!-- <div class="footer col-md-12 justify-content-center mt-5"> -->
+                    
                     <small>Powered by HTML/CSS - Bootstrap - JavaScript/jQuery - Ajax - appel à une API</small>
-                </div>
+                <!-- </div> -->
+                <!-- <div class="col-md-2"></div> -->
             </div>
         </footer>
 
