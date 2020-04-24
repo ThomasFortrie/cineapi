@@ -41,7 +41,7 @@ $(document).ready(function () {
         } else {
 
             $.ajax({
-                url: "https://imdb-api.com/API/Search/k_2Yrf2vqz/" + $('#inputSearch').val(),
+                url: "https://imdb-api.com/API/Search/k_2Yrf2vqz/" + $('#inputSearch').val() ,
 
                 success: function (result) {
                     console.log(result);
@@ -88,20 +88,33 @@ $(document).ready(function () {
                 var imageId = data['results'][i]['image'].split('/');
                 var caseCible = imageId.length - 1;
                 console.log(imageId[caseCible]);
-                var miniVisioImg = "https://imdb-api.com/Images/192x264/" + imageId[caseCible];
+
+                if(imageId[caseCible].indexOf("nopicture") === -1){
+
+                    var miniVisioImg = "https://imdb-api.com/Images/192x264/" + imageId[caseCible];
+                }else{
+                    var miniVisioImg = "images/nopic.jpg";
+                }
                 console.log(miniVisioImg);
 
 
 
                 // Mise en forme et affichage
-                $('<p></p>').html("id IMDB : " + movieId).appendTo($(currentDiv));
+                // $('<p></p>').html("id IMDB : " + movieId).appendTo($(currentDiv));
                 $('<p></p>').html("Titre : " + movieTitle).appendTo($(currentDiv));
                 $('<p></p>').html(movieDesc).appendTo($(currentDiv));
-                $('<br>').appendTo($(currentDiv));
+                
                 $('<img></img>').attr({
                     title: movieTitle,
                     alt: movieTitle,
                     src: miniVisioImg
+                }).appendTo($(currentDiv));
+                
+                $('<br>').appendTo($(currentDiv));
+                $('<img></img>').attr({
+                    title: movieTitle,
+                    alt: movieTitle,
+                    src: "images/line.jpg"
                 }).appendTo($(currentDiv));
 
 
