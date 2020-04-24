@@ -11,7 +11,7 @@ $(document).ready(function () {
     // On écoute les cliques souris de la page pour récupérer les classe de l'élément
     $(document.body).on('click', function (e) {
         e.stopPropagation();
-        e.preventDefault();
+        // e.preventDefault();
         console.log(event.target.classList);
         if (event.target.classList.contains("shutDownDiv")) {
             $mouseOut = false;
@@ -87,7 +87,6 @@ $(document).ready(function () {
                 // récupération id de l'image
                 var imageId = data['results'][i]['image'].split('/');
                 var caseCible = imageId.length - 1;
-                console.log(imageId[caseCible]);
 
                 if(imageId[caseCible].indexOf("nopicture") === -1){
 
@@ -95,27 +94,41 @@ $(document).ready(function () {
                 }else{
                     var miniVisioImg = "images/nopic.jpg";
                 }
-                console.log(miniVisioImg);
 
 
 
                 // Mise en forme et affichage
                 // $('<p></p>').html("id IMDB : " + movieId).appendTo($(currentDiv));
-                $('<p></p>').html("Titre : " + movieTitle).appendTo($(currentDiv));
-                $('<p></p>').html(movieDesc).appendTo($(currentDiv));
-                
-                $('<img></img>').attr({
-                    title: movieTitle,
-                    alt: movieTitle,
-                    src: miniVisioImg
-                }).appendTo($(currentDiv));
-                
-                $('<br>').appendTo($(currentDiv));
                 $('<img></img>').attr({
                     title: movieTitle,
                     alt: movieTitle,
                     src: "images/line.jpg"
                 }).appendTo($(currentDiv));
+
+                $('<p></p>').attr('class','pDom').html("Titre : " + movieTitle).appendTo($(currentDiv));
+                $('<p></p>').html(movieDesc).appendTo($(currentDiv));
+                
+                var theImgLink = $('<a></a>').attr({
+                    href: "https://imdb-api.com/Images/" + imageId[caseCible],
+                    target: "_blank"
+                }).appendTo($(currentDiv));
+                $('<img></img>').attr({
+                    title: movieTitle,
+                    alt: movieTitle,
+                    src: miniVisioImg
+                }).appendTo($(theImgLink));
+                
+                $('<br>').appendTo($(currentDiv));
+                
+                $('<button></button>').attr({
+                    class: 'btn btn-outline-success',
+                    id: movieId
+                }).html('Chercher d\'autres affiches').appendTo($(currentDiv));
+                $('<br>').appendTo($(currentDiv));
+
+                $('<small></small>').html('en développement... =)').appendTo($(currentDiv));
+                
+                $('<br>').appendTo($(currentDiv));
 
 
 
@@ -124,6 +137,8 @@ $(document).ready(function () {
         }
     }
 
+    // fonction d'Affichage et remplissage de la div d'information
+    // fonction d'Affichage et remplissage de la div d'information
     // fonction d'Affichage et remplissage de la div d'information
     function infoDivMessage(message) {
         $('<img></img>').attr({

@@ -48,6 +48,13 @@ body{
     border: 2px solid black;
     border-radius: 20px;
 }
+.pDom{
+    font-size: large;
+    font-weight: bold;
+}
+.btn{
+    margin-top: 5px;
+}
 
 @media (max-width: 640px){
     
