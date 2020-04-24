@@ -8,7 +8,7 @@ body{
 }
 .container{
     color: rgb(0, 0, 0);
-    background-color: rgb(225, 229, 255);
+    background-color: rgb(243, 243, 243);
     border-radius: 20px;
 }
 .row{
@@ -35,6 +35,20 @@ body{
     padding: 2px;
 }
 
+#infoDiv{
+    display: none;
+    padding: 10px;
+    position: absolute;
+    z-index: 99;
+    top: 20%;
+    left: 25%;
+    width: 40%;
+    /* height: 10%; */
+    background-color: ivory;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
 @media (max-width: 640px){
     
     .footer{
@@ -44,5 +58,18 @@ body{
     border-radius: 3px;
     margin: auto;
     padding: 2px;
+    }
+    #infoDiv{
+        display: none;
+        padding: 10px;
+        position: absolute;
+        z-index: 99;
+        top: 20%;
+        left: 10%;
+        width: 80%;
+        height: 50%;
+        background-color: ivory;
+        border: 2px solid black;
+        border-radius: 20px;
     }
 }
