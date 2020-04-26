@@ -55,6 +55,12 @@ body{
 .btn{
     margin-top: 5px;
 }
+#theLoading{
+    display: none;
+    position: absolute;
+    left: 45%;
+    top: 30%;
+}
 
 @media (max-width: 640px){
     

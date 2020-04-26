@@ -34,21 +34,30 @@ $(document).ready(function () {
     $('#searchBtn').on('click', function (e) {
         e.stopPropagation();
         e.preventDefault();
+        $('#theLoading').css({
+           'display': 'initial',
+            'z-index': '999'
+        });
 
         if ($('#inputSearch').val() == "") {
             infoDivMessage("Veuillez renseigner au moins un mot clef.");
 
         } else {
-
-            $.ajax({
-                url: "https://imdb-api.com/API/Search/k_2Yrf2vqz/" + $('#inputSearch').val() ,
-
-                success: function (result) {
-                    console.log(result);
-                    getResult(result);
-                }
+            // 
+            $('.container').css({
+                filter: 'blur(2px)',
             })
 
+                $.ajax({
+                    url: "https://imdb-api.com/API/Search/k_2Yrf2vqz/" + $('#inputSearch').val(),
+
+                    success: function (result) {
+                        console.log(result);
+                        getResult(result);
+                    }
+                })
+                
+                
         }
 
     })
@@ -88,10 +97,10 @@ $(document).ready(function () {
                 var imageId = data['results'][i]['image'].split('/');
                 var caseCible = imageId.length - 1;
 
-                if(imageId[caseCible].indexOf("nopicture") === -1){
+                if (imageId[caseCible].indexOf("nopicture") === -1) {
 
                     var miniVisioImg = "https://imdb-api.com/Images/192x264/" + imageId[caseCible];
-                }else{
+                } else {
                     var miniVisioImg = "images/nopic.jpg";
                 }
 
@@ -105,9 +114,9 @@ $(document).ready(function () {
                     src: "images/line.jpg"
                 }).appendTo($(currentDiv));
 
-                $('<p></p>').attr('class','pDom').html("Titre : " + movieTitle).appendTo($(currentDiv));
+                $('<p></p>').attr('class', 'pDom').html("Titre : " + movieTitle).appendTo($(currentDiv));
                 $('<p></p>').html(movieDesc).appendTo($(currentDiv));
-                
+
                 var theImgLink = $('<a></a>').attr({
                     href: "https://imdb-api.com/Images/" + imageId[caseCible],
                     target: "_blank"
@@ -117,9 +126,9 @@ $(document).ready(function () {
                     alt: movieTitle,
                     src: miniVisioImg
                 }).appendTo($(theImgLink));
-                
+
                 $('<br>').appendTo($(currentDiv));
-                
+
                 $('<button></button>').attr({
                     class: 'btn btn-outline-success',
                     id: movieId
@@ -127,11 +136,14 @@ $(document).ready(function () {
                 $('<br>').appendTo($(currentDiv));
 
                 $('<small></small>').html('en développement... =)').appendTo($(currentDiv));
-                
+
                 $('<br>').appendTo($(currentDiv));
 
 
-
+                $('.container').css('filter','none');
+                $('#theLoading').css({
+                    display: 'none'
+                });
 
             }
         }
