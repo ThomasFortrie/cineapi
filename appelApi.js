@@ -146,7 +146,7 @@ $(document).ready(function () {
                 }).html('Chercher d\'autres affiches').appendTo($(currentDiv));
                 $('<br>').appendTo($(currentDiv));
 
-                $('<small></small>').html('en développement... =)').appendTo($(currentDiv));
+                // $('<small></small>').html('en développement... =)').appendTo($(currentDiv));
 
                 $('<br>').appendTo($(currentDiv));
 
