@@ -118,11 +118,11 @@ $(document).ready(function () {
 
                 // Mise en forme et affichage
                 // $('<p></p>').html("id IMDB : " + movieId).appendTo($(currentDiv));
-                $('<img></img>').attr({
-                    title: movieTitle,
-                    alt: movieTitle,
-                    src: "images/line.jpg"
-                }).appendTo($(currentDiv));
+                // $('<img></img>').attr({
+                //     title: movieTitle,
+                //     alt: movieTitle,
+                //     src: "images/line.jpg"
+                // }).appendTo($(currentDiv));
 
                 $('<p></p>').attr('class', 'pDom').html("Titre : " + movieTitle).appendTo($(currentDiv));
                 $('<p></p>').html(movieDesc).appendTo($(currentDiv));
