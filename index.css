@@ -17,12 +17,13 @@ body{
 #h1Title{
     font-family: 'cinema';
     display: inline-block;
-    background-color: black;
+    /* background-color: black; */
     color: orangered;
     padding: 10px;
-    border-radius: 100px;
-    border: 2px solid red;
+    /* border-radius: 100px; */
+    /* border: 2px solid red; */
     margin: 10px;
+    text-shadow: 2px 2px 2px black;
 }
 
 
